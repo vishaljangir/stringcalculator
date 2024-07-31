@@ -1,7 +1,7 @@
 class NegativeNumberError < StandardError; end
 
 class Calculator
-  def sum_only_integer_values(string)
+  def add(string)
     numbers = string.scan(/-?\d+/)
     numbers = numbers.map(&:to_i)
     if numbers.any?(&:negative?)
