@@ -20,5 +20,6 @@ class TestCalculator < Minitest::Test
 
   def test_handle_new_line
     assert_equal 6, @calculator.sum_only_integer_values("1\n2, 3")
+    assert_equal 3, @calculator.sum_only_integer_values("//;\n1;2")
   end
 end
