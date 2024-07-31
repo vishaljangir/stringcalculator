@@ -22,4 +22,11 @@ class TestCalculator < Minitest::Test
     assert_equal 6, @calculator.sum_only_integer_values("1\n2, 3")
     assert_equal 3, @calculator.sum_only_integer_values("//;\n1;2")
   end
+
+  def test_with_negative_number
+    exception = assert_raises(NegativeNumberError) do
+      @calculator.sum_only_integer_values("-2,4,-6,-3,5,4")
+    end
+    puts "\n#{exception}"
+  end
 end
