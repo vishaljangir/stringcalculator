@@ -27,6 +27,7 @@ class TestCalculator < Minitest::Test
     exception = assert_raises(NegativeNumberError) do
       @calculator.add("-2,4,-6,-3,5,4")
     end
+    assert_equal "negative numbers not allowed -2,-6,-3", "#{exception}"
     puts "\n#{exception}"
   end
 end
